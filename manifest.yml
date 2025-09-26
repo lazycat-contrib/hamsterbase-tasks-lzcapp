@@ -1,0 +1,32 @@
+name: HamsterBase Tasks
+package: community.lazycat.app.hamsterbase-tasks
+version: 25.9.25
+description: 一个简单的工具，帮助创造者整理想法，创造美好
+homepage: https://github.com/hamsterbase/tasks
+author: hamsterbase
+application:
+  subdomain: hamsterbase-tasks
+  background_task: true
+  public_path:
+    - /
+
+  routes:
+    - /=http://hamsterbase-tasks:3000/
+services:
+  hamsterbase-tasks:
+    container_name: hamsterbase-tasks
+    # hamsterbase/tasks:2025.09.2500
+    image: registry.lazycat.cloud/czyt/hamsterbase/tasks:3f8b86354f4808bc
+    binds:
+      - /lzcapp/var/data:/app/data
+
+locales:
+  zh:
+    name: "HamsterBase Tasks"
+    description: "一个简单的工具，帮助创造者整理想法，创造美好"
+  zh_CN:
+    name: "HamsterBase Tasks"
+    description: "一个简单的工具，帮助创造者整理想法，创造美好"
+  en:
+    name: "HamsterBase Tasks"
+    description: "help creators organize ideas and build great things"
