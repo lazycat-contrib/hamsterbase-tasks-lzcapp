@@ -1,0 +1,38 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/hamsterbase-tasks.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: hamsterbase-tasks
+build:
+  run_buildscript: false
+images:
+  # 主应用：上游日期型版本家族 YYYY.MM.DDHH（如 2025.09.2500 / 2026.05.2700），按 SemVer 排序
+  - id: hamsterbase-tasks
+    target: service
+    service: hamsterbase-tasks
+    source: hamsterbase/tasks
+    channel: stable
+    sort: semver
+    tag_regex: '^\d{4}\.\d{1,2}\.\d{1,4}$'
+    delivery:
+      mode: lazycat
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: HamsterBase Tasks
+    summary: "一个简单的工具，帮助创造者整理想法，创造美好"

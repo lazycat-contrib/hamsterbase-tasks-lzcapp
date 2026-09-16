@@ -1,0 +1,14 @@
+package: community.lazycat.app.hamsterbase-tasks
+version: 25.9.25
+name: HamsterBase Tasks
+description: "一个简单的工具，帮助创造者整理想法，创造美好"
+min_os_version: "1.5.0"
+homepage: https://github.com/hamsterbase/tasks
+author: hamsterbase
+locales:
+  zh:
+    name: "HamsterBase Tasks"
+    description: "一个简单的工具，帮助创造者整理想法，创造美好"
+  en:
+    name: "HamsterBase Tasks"
+    description: "Help creators organize ideas and build great things"
