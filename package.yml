@@ -1,5 +1,5 @@
 package: community.lazycat.app.hamsterbase-tasks
-version: 25.9.25
+version: 2025.10.1300
 name: HamsterBase Tasks
 description: "一个简单的工具，帮助创造者整理想法，创造美好"
 min_os_version: "1.5.0"
